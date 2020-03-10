@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Product;
-
 use Illuminate\Http\Request;
+use App\Product;
+use App\User;
+
 
 class ProductController extends Controller{
-
+    public $nome;
 
 
     public function verForm (Request $request){
@@ -17,6 +18,8 @@ class ProductController extends Controller{
     public function verAdmProduto (Request $request){
         return view('produtos.tabelaAdmProduto');
     }
+
+   
 
     public function verTodosProdutos(Request $request){
 
@@ -42,8 +45,42 @@ class ProductController extends Controller{
             }
 
             return view ('produtos.formProduto', ["resultado"=>$resultado]);
+    }
+    
+          public function deletarProduto(Request $request, $id=0){
+            // para deletar vc vai usar Product::destroy($id)
+            $produto = Product::find($id);
+           $resultado =  Product::destroy($id);
+    
+           if($resultado){
+               return redirect('/produtosAdm');
+           }
+        }
+
+    public function verUpdateProduto(Request $request, $id){
+   
+        $product = Product::find($id);
+        if($product){
+            return view('produtos.updateProduto',['product'=>$product]);  
+        }else {
+            return view('produtos.updateProduto');
+        }      
 
 
+    }
+    
+    public function updateProduto (Request $request){
+
+        $product = Product::find($request->idProduct);
+        $product->nome = $request->nomeProduto;
+        $product->descricao = $request->descricaoProduto;
+        $product->quantidade = $request->quantidadeProduto;
+        $product->preco = $request->precoProduto;
+        $resultado = $product->save();
+  
+        return view('produtos.updateProduto', ["resultado"=>$resultado]);
+      }
+      
     }
 
 
@@ -55,4 +92,8 @@ class ProductController extends Controller{
 
 
 
-}
+
+
+
+
+

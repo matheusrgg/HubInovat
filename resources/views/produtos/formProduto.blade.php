@@ -6,6 +6,9 @@
 
 <section class="container">
     <div class="row">
+        <a class="btn btn-secondary" href="/produtosAdm">
+            Voltar
+        </a>
         <div class="col-md-12">
             <h1>Cadastro de Produto</h1>        
         </div>

@@ -8,7 +8,7 @@
 
     <div class="row text-center container-fluid pb-3">
         <div class="col-md-12">
-          <h1 class="text-success mt-2"><b>Lista de Produtos</b></h1>
+          <h1 class="text-danger mt-2"><b>Lista de Produtos</b></h1>
         </div>
     </div>
     
@@ -48,10 +48,11 @@
                       <td>{{$product->updated_at}}</td>
 
                       <td class="w-25">
-                          <a class="btn btn-secondary btn-sm mb-1 mt-1" href="#">&nbsp; Desativar&nbsp;&nbsp;</a> 
-                          <a class="btn btn-primary btn-sm mb-1 mt-1" href="">&nbsp; Editar&nbsp;&nbsp;</a>
-              
-                          <a class="btn btn-danger btn-sm" href="">Apagar</a>
+                           
+                      <a class="btn btn-primary btn-sm mb-1 mt-1" href="/produtos/atualizar/{{$product->id}}">&nbsp; Editar&nbsp;&nbsp;</a>
+            
+                      <a class="btn btn-danger btn-sm" href="/produtosAdm/{{$product->id}}">Apagar</a>
+
                       </td>
                   </tr>
 
