@@ -31,4 +31,9 @@ Route::get('/produtos/atualizar/{id?}', 'ProductController@verUpdateProduto');
 Route::get('produtosAdm/{id?}','ProductController@deletarProduto');
 Auth::routes();
 
+//Rota criada para autentificação ///
 Route::get('/home', 'HomeController@index')->name('home');
+
+/// Rota para o template da Home ///
+
+Route::get('/homeTemplate', 'ProductController@verhome')->name('verhome');

@@ -15,6 +15,9 @@ class ProductController extends Controller{
         return view('produtos.formProduto');
     }
     
+   
+
+
     public function verAdmProduto (Request $request){
         return view('produtos.tabelaAdmProduto');
     }
@@ -39,7 +42,7 @@ class ProductController extends Controller{
             $resultado = $novoProduto->save();
 
             if($resultado){
-                echo "Deu certo arrombado";
+                echo "Seu Cadastro foi um SUCESSO ! ";
             }else{
                 echo"deu ruim";
             }
