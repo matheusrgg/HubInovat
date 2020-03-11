@@ -15,7 +15,10 @@ class ProductController extends Controller{
         return view('produtos.formProduto');
     }
     
-   
+   public function verDashboard(Request $request){
+            return view('dashboard');
+    
+   }
 
 
     public function verAdmProduto (Request $request){

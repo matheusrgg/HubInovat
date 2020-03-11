@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 
 
+//Rota dashboard
+Route::get('/dashboard', 'ProductController@verDashboard');
+
+//Rota para Lista Produtos
 Route::get('/produtosAdm','ProductController@verAdmProduto');
 Route::get('/produtosAdm','ProductController@verTodosProdutos');
 //Rota para Cadastro ///
