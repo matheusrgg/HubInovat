@@ -18,7 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Confirmar se aqui insere
+//Insere os dados
+
+
 Route::post('/produtos', 'ApiController@store');
 
 //Mostra os dados

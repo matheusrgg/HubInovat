@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\User;
-
+use Auth;
 
 class ProductController extends Controller{
     public $nome;
@@ -42,6 +42,7 @@ class ProductController extends Controller{
             $novoProduto ->descricao = $request ->descricaoProduto;
             $novoProduto->preco = $request->precoProduto;
             $novoProduto->quantidade = $request->quantidadeProduto;
+            $novoProduto->user_id = Auth::user()->id;
             $resultado = $novoProduto->save();
 
             if($resultado){

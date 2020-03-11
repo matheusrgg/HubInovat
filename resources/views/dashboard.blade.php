@@ -60,7 +60,7 @@
   <div class="card-body">
     <h5 class="card-title">Painel de Usuários</h5>
     <p class="card-text">Acompanhe as operações e acesse diversas informações importantes.</p>
-    <a href="#" class="btn btn-primary">Usuários</a>
+    <a href="/usuariosAdm" class="btn btn-primary">Usuários</a>
   </div>
 </div>
 

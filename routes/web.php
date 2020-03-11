@@ -41,3 +41,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 /// Rota para o template da Home ///
 
 Route::get('/homeTemplate', 'ProductController@verhome')->name('verhome');
+
+
+
+///Rota para Usuário ///
+
+Route::get('/usuariosAdm', 'UsuarioController@verTodosUsuarios');
+// Route::get('/usuariosAdm', 'UsuarioController@criarUsuario');
+
+//Rota para Cadastro
+
+Route::get('/usuarios/cadastrar', 'UsuarioController@verForm');
+// Route::get('/usuarios/cadastrar', 'UsuarioController@criarUsuario');
