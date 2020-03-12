@@ -14,8 +14,8 @@ class CreateProductsTable extends Migration
             $table->string('nome', 300);
             $table->string('descricao', 300);
             $table->integer('quantidade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
             $table->float('preco', 10, 2);
             $table->timestamps();
         });

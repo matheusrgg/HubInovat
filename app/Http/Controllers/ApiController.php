@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Product;
+use App\User;
+
 use App\Http\Resources\Product as ProductResource;
+
 
 use Illuminate\Http\Request;
 
@@ -15,7 +18,7 @@ class ApiController extends Controller
             $novoProduto ->nome = $request->input('nome');
             $novoProduto ->descricao = $request ->input('descricao');
             $novoProduto->preco = $request->input('preco');
-            $novoProduto->user_id= $request->input('user_id');
+            // $novoProduto->user_id= $request->input('user_id');
             $novoProduto->quantidade = $request->input('quantidade');
             
             $novoProduto->save();
@@ -55,7 +58,7 @@ class ApiController extends Controller
         $produto ->nome = $request->input('nome');  
         $produto ->descricao = $request ->input('descricao');
         $produto->preco = $request->input('preco');
-        $novoProduto->user_id= $request->input('user_id');
+        // $novoProduto->user_id= $request->input('user_id');
         $produto->quantidade = $request->input('quantidade');
         $produto->save();
         return new ProductResource($produto);
@@ -79,6 +82,15 @@ class ApiController extends Controller
         }
 
     }
+
+
+
+
+
+
+
+
+
 
     
 }

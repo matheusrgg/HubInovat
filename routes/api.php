@@ -26,4 +26,3 @@ Route::get('/produtosdata/{id}', 'ApiController@showbyid');
 Route::put('/produtosupdate/{id}', 'ApiController@update');
 Route::delete('/produtosdelete/{id}','ApiController@delete');
 
-//----------------- Dados de Usuarios ------//

@@ -42,7 +42,7 @@ class ProductController extends Controller{
             $novoProduto ->descricao = $request ->descricaoProduto;
             $novoProduto->preco = $request->precoProduto;
             $novoProduto->quantidade = $request->quantidadeProduto;
-            $novoProduto->user_id = Auth::user()->id;
+            // $novoProduto->user_id = Auth::user()->id;
             $resultado = $novoProduto->save();
 
             if($resultado){
