@@ -13,48 +13,58 @@
             <h1>Cadastro de Usuario</h1>        
         </div>
     </div>
-      <form action="/usuarios/cadastrar" method="POST" enctype="">
-      @csrf
 
-      <div class="form-group">
-        <label for="nomeUsuario">Nome do Usuario</label>
-        <input class="form-control" type="text" name="nomeUsuario" id="nomeUsuario">
-      </div>
 
-      <div class="form-group">
-        <label for="emailUsuario">Email do Usuario</label>
-        <input class="form-control" type="text" name="emailUsuario" id="emailUsuario">
-      </div>
+       <!--aqui começa o formulário -->  
 
-      
-      <div class="form-group">
-        <label for="senhaUsuario">Senha do Usuario</label>
-        <input class="form-control" type="text" name="emailUsuario" id="emailUsuario">
-      </div>
 
-      
+       <form action="/usuarios/cadastrar" method="POST" enctype="">
+  
+  @csrf
 
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">
-            Cadastrar
-        </button>
-    </div>
 
-    </form>
 
-    
-    <div class="row">
-        <div class="col-md-12">
-            @if(isset($result))
-                @if($result)
-                <h1>Deu certo irmão!!!!</h1>
-                @else
-                <h1>Não deu certo seu cadastro brother, se deu mal, foi sua culpa !</h1>
-                @endif
-            @endif
-        </div>
-    </div>
+  <div class="form-group">
+    <label for="nomeUsuario">Nome do Usuario</label>
+    <input name="nomeUsuario" value="{{ old("name", '') }}" type="text" class="form-control " id="nomeUsuario" placeholder="Nome">
+  </div>
+
+  <div class="form-group">
+    <label for="emailUsuario">Email do Usuario</label>
+    <input name="emailUsuario" value="{{ old("email", '') }}" type="email" class="form-control " id="emailUsuario" placeholder="seunome@email.com">
+  </div>
+
+  
+  <div class="form-group">
+    <label for="senhaUsuario">Senha do Usuario</label>
+    <input name="senhaUsuario" value="{{ old("senhaUsuario", '') }}" type="password" class="form-control" id="senhaUsuario" placeholder="Digite uma senha, mínimo 6 caracteres">
+  </div>
+
+  <div class="form-group">
+    <label for="senhaUsuario">Confirma Senha do Usuario</label>
+    <input name="senhaConfirmUsuario" value="{{ old("senhaConfirmUsuario", '') }}" type="password" class="form-control " id="senhaConfirmUsuario" placeholder="Confirme a senha">
+  </div> 
+  
+
+<div class="form-group">
+    <button class="btn btn-primary" type="submit">
+        Cadastrar
+    </button>
+</div>
+
+</form>
+
+
+
+
 
 </section>
+
+
+
+
+
+
+
 
 @endsection

@@ -23,20 +23,31 @@ class UsuarioController extends Controller
         return view('usuarios.formUsuario');
     }
 
-    // public function criarUsuario(Request $request){
-
-    //     $novoUsuario = new User();
-    //     $novoUsuario ->name = $request->nomeUsuario;
-    //     $novoUsuario ->email = $request->emailUsuario;
-    //     $novoUsuario ->password = Hash::make($request->senhaUsuario);
-
-    //     $resultado=$novoUsuario->save();
-    //      return view('usuarios.formUsuario', ["resultado"=>$resultado]);
-    // }
 
     
+    public function criarUsuario(Request $request){
 
+        // dd(criarUsuario());
 
+        $novoUsuario = new User();
+        $novoUsuario ->name = $request->nomeUsuario;
+        $novoUsuario ->email = $request->emailUsuario;
+        $novoUsuario ->password = Hash::make($request->senhaUsuario);
+
+        $resultado=$novoUsuario->save();
+         return view('usuarios.formUsuario', ["resultado"=>$resultado]);
+    }
+
+    public function deletarUsuario(Request $request, $id){
+     
+        $produto = User::find($id);
+  
+        $result =  User::destroy($id);
+
+        if($result){
+            return redirect('/usuariosAdm');
+        }
+}
 
 
 

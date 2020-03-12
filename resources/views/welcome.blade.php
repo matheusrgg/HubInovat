@@ -11,6 +11,7 @@
 
 .card-title, .card-text , #submit{
     color: white;
+    
 }
 
 
@@ -19,6 +20,13 @@
     background-color: #ff000091;
 }
 
+.card-title{
+  font-size: xx-large;
+}
+.card-text{
+  font-size: x-large;
+
+}
 #icon {
     color: #e61324;
     width: 210px;
@@ -27,8 +35,10 @@
 
 }
 .page-footer{
-    background-color: #e61324;
+    background-color:#A7191C;;
 }
+
+
 
 </style>
 
@@ -38,21 +48,28 @@
 
 
 
-<div class="card bg-dark text-dark">
+<div class="card bg-dark text-dark  " >
     
-    <img src="imagens/womeninTech.png" class="card-img" width="100px" height="700px" alt="...">
+    <img src="imagens/womeninTech.png" class="card-img" width="90px" height="700px" alt="...">
     
-    <div class="card-img-overlay">
+    <div class="card-img-overlay text-lg-center" style="position:relative;">
    
-      <h5 class="card-title">PROPERTY INVENTORTY</h5>
+      <h5 class="card-title font-weight-bold">INVENTÀRIO DE PROPRIEDADES</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
      
     </div>
-  </div>
+ 
+ </div>
 
 
 
 <!-- / FIM Capa Principal-->
+
+
+
+
+
+
 
 
 <!-- Cartões-->
@@ -101,7 +118,7 @@
 
 
 <!-- Footer -->
-<footer class="page-footer font-small blue pt-4">
+<footer class="page-footer font-small blue pt-4" style="height:165px;">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">

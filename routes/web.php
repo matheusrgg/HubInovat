@@ -17,39 +17,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/homeTemplate', 'ProductController@verhome')->name('verhome');
 
 
-//Rota dashboard
-Route::get('/dashboard', 'ProductController@verDashboard');
+Auth::routes();
+
+
+//---------------------   Rota dashboard ----------------//
+Route::get('/dashboard', 'ProductController@verDashboard')->middleware('checkuser');
 
 //Rota para Lista Produtos
 Route::get('/produtosAdm','ProductController@verAdmProduto');
 Route::get('/produtosAdm','ProductController@verTodosProdutos');
-//Rota para Cadastro ///
+
+
 Route::get('/produtos/cadastrar','ProductController@verForm');
 Route::post('/produtos/cadastrar','ProductController@criarProduto');
-/// Rota para Udate ///
+
 Route::post('/produtos/atualizar', 'ProductController@updateProduto');
 Route::get('/produtos/atualizar/{id?}', 'ProductController@verUpdateProduto');
-/// Rota para Deletar ///
+
 Route::get('produtosAdm/{id?}','ProductController@deletarProduto');
-Auth::routes();
-
-//Rota criada para autentificação ///
-Route::get('/home', 'HomeController@index')->name('home');
-
-/// Rota para o template da Home ///
-
-Route::get('/homeTemplate', 'ProductController@verhome')->name('verhome');
 
 
 
-///Rota para Usuário ///
+
+///-------------------------- Rota para Usuário ------------------------///
 
 Route::get('/usuariosAdm', 'UsuarioController@verTodosUsuarios');
-// Route::get('/usuariosAdm', 'UsuarioController@criarUsuario');
-
-//Rota para Cadastro
 
 Route::get('/usuarios/cadastrar', 'UsuarioController@verForm');
-// Route::get('/usuarios/cadastrar', 'UsuarioController@criarUsuario');
+Route::post('/usuarios/cadastrar', 'UsuarioController@criarUsuario');
+Route::get('/usuariosAdm/{id?}', 'UsuarioController@deletarUsuario');

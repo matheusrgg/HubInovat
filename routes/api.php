@@ -18,21 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Insere os dados
-
+//----------------- Dados de Produtos ------//
 
 Route::post('/produtos', 'ApiController@store');
-
-//Mostra os dados
 Route::get('/produtosdata', 'ApiController@show'); 
-
-//Mostra dados individual
 Route::get('/produtosdata/{id}', 'ApiController@showbyid');
-
-//Atualizar
-
 Route::put('/produtosupdate/{id}', 'ApiController@update');
-
-// Deletar API
-
 Route::delete('/produtosdelete/{id}','ApiController@delete');
+
+//----------------- Dados de Usuarios ------//

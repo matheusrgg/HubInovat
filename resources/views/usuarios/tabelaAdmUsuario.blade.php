@@ -49,7 +49,7 @@
                   <td class="w-25">
                       
                       <a class="btn btn-primary btn-sm mb-1 mt-1" href="#">&nbsp; Editar&nbsp;&nbsp;</a> 
-                      <a class="btn btn-danger btn-sm" href="#">Apagar</a>
+                      <a class="btn btn-danger btn-sm" href="/usuariosAdm/{{$usuario->id}}">Apagar</a>
                   </td>
               </tr>
 

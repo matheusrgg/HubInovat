@@ -10,7 +10,7 @@ class Product extends Model
     protected $guarded = ['id', 'created_at', 'update_at'];
     protected $table = 'products';
 
-    public function users(){
+    public function user(){
         return $this->belongsTo('App\User');
     }
 }
